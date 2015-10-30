@@ -13,7 +13,10 @@
 ```sh
 brew cask install firealpaca
 ```
+
+
 - そんなところで、今回は画像を投稿する練習でした。
----
+
+----
 
 _eof_
