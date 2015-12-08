@@ -4,14 +4,16 @@
 - 以下の記事を見かけて感動。記事に書いてることをやってみた
   - [Mac のディスプレイに Raspberry Pi のデスクトップを表示する](http://qiita.com/UedaTakeyuki/items/7cc0fc6011cb0448c070)
 - ```brew cask install xquartz``` で XQuartzを入れる
-- ランチャー > その他 > XQuartz でターミナル起動
+- ランチャー > その他 > XQuartz でターミナル起動  
   ![XQuartz icon](xquartz_app.png)
+
 - 以下コマンドでRaspberry Pi に接続
 ```sh
 ssh -X pi@192.168.x.x lxsession
 ```
 - デスクトップが起き上がってくる
 ![raspberrypi_on_xquartz.png](raspberrypi_on_xquartz.png)
+
 
 ## Raspberry Pi上のデスクトップを操作するために
 - フルスクリーンモードとフルスクリーン時のメニューバーアクセス許可を有効にする
