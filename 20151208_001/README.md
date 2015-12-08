@@ -17,7 +17,7 @@ ssh -X pi@192.168.x.x lxsession
 ## Raspberry Pi上のデスクトップを操作するために
 - フルスクリーンモードとフルスクリーン時のメニューバーアクセス許可を有効にする  
 ![xquartz_output_setting.png](xquartz_output_setting.png)
-- アイコンを右クリックした時の設定before/after
+- フルスクリーン設定before/afterでアイコンを右クリックした時の違い
   - before  
     ![not_fullscreen_mode.png](not_fullscreen_mode.png)
   - after  
