@@ -6,22 +6,21 @@
 - ```brew cask install xquartz``` で XQuartzを入れる
 - ランチャー > その他 > XQuartz でターミナル起動  
   ![XQuartz icon](xquartz_app.png)
-
 - 以下コマンドでRaspberry Pi に接続
 ```sh
 ssh -X pi@192.168.x.x lxsession
 ```
-- デスクトップが起き上がってくる
+- デスクトップが起き上がってくる  
 ![raspberrypi_on_xquartz.png](raspberrypi_on_xquartz.png)
 
 
 ## Raspberry Pi上のデスクトップを操作するために
-- フルスクリーンモードとフルスクリーン時のメニューバーアクセス許可を有効にする
+- フルスクリーンモードとフルスクリーン時のメニューバーアクセス許可を有効にする  
 - ![xquartz_output_setting.png](xquartz_output_setting.png)
 - アイコンを右クリックした時の設定before/after
-  - before
+  - before  
     ![not_fullscreen_mode.png](not_fullscreen_mode.png)
-  - after
+  - after  
     ![fullscreen_mode_is_on.png](fullscreen_mode_is_on.png)
 
 ## 感想
