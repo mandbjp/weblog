@@ -18,7 +18,13 @@ echo 'PATH="/usr/local/heroku/bin:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
-## 駄文
+## heroku初期化処理
+- 以下コマンドを実行しておくとherokuの必要なファイルの取得・更新される模様
+```sh
+heroku version
+```
+
+## 余談
 - `Hero` + `Haiku` => `heroku` というのが有力な由来らしい
 
 ----
