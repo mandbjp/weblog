@@ -35,6 +35,18 @@
 
 (途中更新)
 
+- vagrant のvmの外に出て Vagrantfileを編集
+- ポートフォワーディングを設定
+```rb
+config.vm.network "forwarded_port", guest: 3000, host: 3000
+```
+- vagrant reload
+- vagrant ssh
+- 該当ディレクトリに移行
+- rails s **-b 0.0.0.0**
+  - -bのオプションをよく忘れる
+- Macbookのブラウザより http://localhost:3000/ を開くとWelcome aboard.
+
 ----
 
 _eof_
