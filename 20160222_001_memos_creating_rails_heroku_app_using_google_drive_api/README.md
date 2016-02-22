@@ -31,7 +31,6 @@
 - bundle install
 - heroku login
   - IDとパスワードを入力
-- heroku create
 
 (途中更新)
 
@@ -46,6 +45,21 @@ config.vm.network "forwarded_port", guest: 3000, host: 3000
 - rails s **-b 0.0.0.0**
   - -bのオプションをよく忘れる
 - Macbookのブラウザより http://localhost:3000/ を開くとWelcome aboard.
+
+- herokuにpushしてみる。vagrant内、railsのディレクトリにて
+- git init
+- git add .
+- git commit -m "message"
+- git push heroku master
+- heroku create
+- git push heroku master
+- *Detected sqlite3 gem which is not supported on Heroku.* と怒られるのでGemfileから該当行をコメントアウト
+  - # gem 'sqlite3'
+- *An error occurred while installing Ruby ruby-2.2.4  For supported Ruby versions...* と怒られる。どうやらruby2.1にしなければならないようだ。
+
+- これに方向転換
+- [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
+
 
 ----
 
