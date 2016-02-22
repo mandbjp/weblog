@@ -92,8 +92,9 @@ echo "==========================================================================
 - CentOSから ```/bin/bash /vagrant/provision_rails.sh``` で実行すればok
 
 ----
-
-今回は手抜きだなぁ..
+## 文献
+- [Vagrant入門 - ドット・インストール](http://dotinstall.com/lessons/basic_vagrant)
+  - #09 #10 にてProvisioningのレッスンがある
 
 ----
 
