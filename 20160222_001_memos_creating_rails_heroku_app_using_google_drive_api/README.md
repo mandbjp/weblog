@@ -58,9 +58,24 @@ config.vm.network "forwarded_port", guest: 3000, host: 3000
 - *An error occurred while installing Ruby ruby-2.2.4  For supported Ruby versions...* と怒られる。どうやらruby2.1にしなければならないようだ。
 
 - これに方向転換
-- [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
+  - [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
+```sh
+git clone https://github.com/heroku/ruby-getting-started.git
+cd ruby-getting-started/
+heroku create
+git push heroku master
+```
 
-
+- herokuのバージョンに合わせるために、rubyのバージョンを2.1.8にする
+  - `rbenv install 2.1.8 && rbenv global 2.1.8 `
+  - ちょっと時間かかる
+- bundle などもインストール
+```sh
+gem install --no-ri --no-rdoc rails
+gem install bundler
+rbenv rehash
+```
+  
 ----
 
 _eof_
