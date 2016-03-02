@@ -75,6 +75,26 @@ gem install --no-ri --no-rdoc rails
 gem install bundler
 rbenv rehash
 ```
+
+- 結局getstarted リポジトリのGemfileがruby 2.2.4なので、それに合わせる
+```sh
+rbenv install 2.2.4 && rbenv global 2.2.4
+gem install --no-ri --no-rdoc rails
+gem install bundler
+rbenv rehash
+```
+- `bundle install`をするとエラーが起きる。PostgreSQL を要求されているがDBは使わないのでGemfileをコメントアウト
+- 
+- ExecJS::RuntimeUnavailable: Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes.
+- と出たので、gem install therubyracerをGemfileに追加
+```sh
+# https://github.com/sstephenson/execjs
+gem 'therubyracer'
+```
+- 結局PostgreSQL必要っぽいのでここを参考にする
+- [http://qiita.com/yuyakato/items/d9b734152c27a5078484](http://qiita.com/yuyakato/items/d9b734152c27a5078484)
+- `sudo yum install postgresql postgresql-devel`
+- これでやっと `rails g model Project`、`rails g controller Projects` ができるようになった
   
 ----
 
