@@ -95,6 +95,23 @@ gem 'therubyracer'
 - [http://qiita.com/yuyakato/items/d9b734152c27a5078484](http://qiita.com/yuyakato/items/d9b734152c27a5078484)
 - `sudo yum install postgresql postgresql-devel`
 - これでやっと `rails g model Project`、`rails g controller Projects` ができるようになった
+- ローカルテストするために、PostgreSQLサーバを入れる `sudo yum install postgresql-server  `
+- 参考 http://www.server-world.info/query?os=CentOS_6&p=postgresql
+```sh
+sudo yum install postgresql-server
+sudo /etc/rc.d/init.d/postgresql initdb
+```
+- なぜかPostgreSQLはドイツ語を話す。いつか直す。
+- `sudo service postgresql *start / stop / status*`
+- ポスグレを起動したら以下3コマンドを実施
+```sh
+vagrant$ sudo su - postgres
+postgres$ createuser --superuser vagrant
+postgres$ exit
+vagrant$ psql -l
+(テーブル一覧が表示される)
+```
+- 引用元 (http://qiita.com/yuyakato/items/d9b734152c27a5078484)[http://qiita.com/yuyakato/items/d9b734152c27a5078484]
   
 ----
 
