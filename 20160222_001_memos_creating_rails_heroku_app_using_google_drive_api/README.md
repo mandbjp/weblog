@@ -117,8 +117,7 @@ vagrant$ psql -l
 - app/view/welcome/index.erb をapp/view/projects にコピーする
 - ちょっといじる
 - ```git add . && git commit -m "comit" && git push heroku master``` して確認
-- 
-
+----
 - ここを参考にGoogle Driveをやってみる
 - [https://blog.hello-world.jp.net/ruby/2717/](https://blog.hello-world.jp.net/ruby/2717/)
 - 
