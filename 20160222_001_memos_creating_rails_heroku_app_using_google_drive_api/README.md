@@ -113,6 +113,17 @@ vagrant$ psql -l
 ```
 - 引用元 (http://qiita.com/yuyakato/items/d9b734152c27a5078484)[http://qiita.com/yuyakato/items/d9b734152c27a5078484]
   
+- rails g controller Projects
+- app/view/welcome/index.erb をapp/view/projects にコピーする
+- ちょっといじる
+- ```git add . && git commit -m "comit" && git push heroku master``` して確認
+- 
+
+- ここを参考にGoogle Driveをやってみる
+- [https://blog.hello-world.jp.net/ruby/2717/](https://blog.hello-world.jp.net/ruby/2717/)
+- 
+
+
 ----
 
 _eof_
