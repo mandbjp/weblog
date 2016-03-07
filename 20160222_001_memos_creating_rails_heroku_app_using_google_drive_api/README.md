@@ -124,9 +124,26 @@ rake db:migrate
 - ちょっといじる
 - ```git add . && git commit -m "comit" && git push heroku master``` して確認
 ----
-- ここを参考にGoogle Driveをやってみる
-- [https://blog.hello-world.jp.net/ruby/2717/](https://blog.hello-world.jp.net/ruby/2717/)
-- 
+- sinatra に浮気してみる
+- [http://totutotu.hatenablog.com/entry/2015/06/10/Heroku%E3%81%AB%E9%80%9F%E6%94%BB%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%81%99%E3%82%8BSinatra%E3%82%A2%E3%83%97%E3%83%AA%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%92%E3%81%A4](Herokuに速攻デプロイするSinatraアプリテンプレートをつくる #1)
+```sh
+bundle init
+mkdir views
+touch app.rb Procfile views/index.haml
+```
+- Gemfile, app.rg, Profileを編集（サイトの通り）
+- Gemfileには以下を追加する
+```rb
+gem 'sinatra'
+gem 'therubyracer'
+```
+- bundle系、heroku系
+```sh
+bundle install
+get init
+heroku create
+git add . ; git commit -m "commit" ; git push heroku master
+```
 
 
 ----
