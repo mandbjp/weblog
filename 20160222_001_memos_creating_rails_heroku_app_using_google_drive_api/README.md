@@ -112,6 +112,12 @@ vagrant$ psql -l
 (テーブル一覧が表示される)
 ```
 - 引用元 (http://qiita.com/yuyakato/items/d9b734152c27a5078484)[http://qiita.com/yuyakato/items/d9b734152c27a5078484]
+- 追加分. railsローカル実行するためにプロジェクト用のdbを作成する
+```sh
+vagrant$ createdb ** ralis_project_name **
+rake db:migrate
+```
+- これでローカル実行が可能になる。herokuのローカル実行は `heroku local -p 3000` でok
   
 - rails g controller Projects
 - app/view/welcome/index.erb をapp/view/projects にコピーする
