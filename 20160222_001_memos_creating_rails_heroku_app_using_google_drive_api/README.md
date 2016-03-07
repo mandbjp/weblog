@@ -134,6 +134,7 @@ touch app.rb Procfile views/index.haml
 - Gemfile, app.rg, Profileを編集（サイトの通り）
 - Gemfileには以下を追加する
 ```rb
+ruby '2.2.4'
 gem 'sinatra'
 gem 'therubyracer'
 ```
@@ -144,7 +145,97 @@ get init
 heroku create
 git add . ; git commit -m "commit" ; git push heroku master
 ```
+- さくっと動いた。
+- 結果的にsinatraでDriveAPIが出来たので要素だけ。
+- Gemfile
+```rb
+# A sample Gemfile
+source "https://rubygems.org"
+ruby '2.2.4'
 
+# gem "rails"
+
+# Assets
+gem 'sinatra'
+gem 'therubyracer'
+gem 'haml'
+gem 'sass'
+gem 'coffee-script'
+gem 'google-api-client', '0.9'
+
+group :development do
+  gem 'foreman'
+end
+```
+- `client_secret.json` をGemfileと同じディレクトリに作成
+- app.rb
+```rb
+require 'bundler/setup'
+require 'sinatra'
+
+require 'haml'
+require 'sass'
+require 'coffee-script'
+
+require 'google/apis/drive_v2'
+require 'google/api_client/client_secrets'
+
+client_secrets = Google::APIClient::ClientSecrets.load
+auth_client = client_secrets.to_authorization
+auth_client.update!(
+  :scope => 'https://www.googleapis.com/auth/drive.readonly',
+  :redirect_uri => 'https://_____.herokuapp.com/oauth2callback'
+)
+
+get '/' do
+  auth_uri = auth_client.authorization_uri.to_s
+  @url = auth_uri
+  haml :index
+end
+
+
+get '/oauth2callback' do
+  auth_code = params['code']
+  auth_client.code = auth_code
+  auth_client.fetch_access_token!
+
+  service = Google::Apis::DriveV2::DriveService.new
+  service.authorization = auth_client
+  response = service.list_files
+  @files = response
+
+  haml :oauth2callback
+end
+```
+
+- view/oauth2callback.haml
+```haml
+:sass
+  body
+    color: #757575
+  h1
+    color: #424242
+  a
+    color: #01579B
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+%h1 Drive API Success!
+%h2 Your file list:
+%ol
+  - @files.items.each do |file|
+    %li
+      %a{:href => "#{file.alternate_link}", :target => '_blank'}
+        %img{:src => "#{file.icon_link}"}
+        #{file.title}
+```
+
+## 結果
+- sinatraがシンプルで扱いやすい。
+- Google OAuth2.0 周りは公式を参照
+- [https://developers.google.com/identity/protocols/OAuth2WebServer#overview](Using OAuth 2.0 for Web Server Applications)
+- hamlで変数を表示するには`"#{file.title}"`という感じ。**シングルクォーテーションとダブルクォーテーションは区別される**
 
 ----
 
