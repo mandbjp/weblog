@@ -19,7 +19,7 @@ with requests.session() as session:
   - Jakarta Commons → [End of Life](http://hc.apache.org/httpclient-3.x/)
 - まだ実践してないので参考サイトだけ貼っておく。
 - [HttpClientでのCookieの扱い(HttpClient3.0-rc3)](http://www.fireproject.jp/feature/uzumi/httpclient/cookie.html)
-[Jakarta Commonsによるネットワークプログラミング](http://www.visards.co.jp/java/net/net06.html)
+- [Jakarta Commonsによるネットワークプログラミング](http://www.visards.co.jp/java/net/net06.html)
 
 
 ----
