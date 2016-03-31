@@ -1,0 +1,22 @@
+:sass
+  body
+    color: #757575
+  h1
+    color: #424242
+
+:coffee
+  console.log('@mes')
+
+%h1 Hello!
+%description 
+  This page will let you test if your Google Drive API is available.
+%ol
+  %li Press the link below
+  %li Login to google if you are not
+  %li
+    Accept to 
+    %strong ProductX
+  %li You will see your files
+%a{:href => @url, :target => '_blank'}
+  Get Authorization code
+

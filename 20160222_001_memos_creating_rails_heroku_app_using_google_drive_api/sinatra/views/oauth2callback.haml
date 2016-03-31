@@ -1,0 +1,20 @@
+:sass
+  body
+    color: #757575
+  h1
+    color: #424242
+  a
+    color: #01579B
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+%h1 Drive API Success!
+%h2 Your file list:
+%ol
+  - @files.items.each do |file|
+    %li
+      %a{:href => "#{file.alternate_link}", :target => '_blank'}
+        %img{:src => "#{file.icon_link}"}
+        #{file.title}
+
